@@ -75,6 +75,9 @@ function comprobarFinDeJuego(casilla) {
         finalizarJuego();
         return;
     }
+  //Especificamos el turno del jugador  
+    let mensajes = document.getElementById('mensajes');
+    mensajes.textContent = 'Siguiente turno: ' + FICHAS[(turnoActual + 1) % 2]; 
 }
 
 //Vamos a crear esta funcion para comprobar la victoria justo despues de poner una ficha nueva
