@@ -1,0 +1,27 @@
+
+body{
+    max-width: 480px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#tablero{
+    border: solid;
+    min-height: 300px;
+    border-spacing: 0;
+    font-size: 36pt;
+}
+
+.casilla{
+    border: solid 1px;
+    min-width: 100px;
+    min-height: 100px;
+    text-align: center;
+
+}
+
+.casilla:hover{
+    background-color: greenyellow;
+    cursor:pointer;
+    
+}
