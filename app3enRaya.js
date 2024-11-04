@@ -55,9 +55,12 @@ function comprobarVictoria() {
     return false;
 }
 
+
+
 function comprobarFinDeJuego(casilla) {
     const numeroCasilla = casilla.textContent;
 
+    // Comprobar si hay victoria
     if(comprobarVictoria()) {
         let mensajes = document.getElementById('mensajes');
         mensajes.textContent = 'Gana ' + FICHAS[turnoActual % 2];
@@ -65,11 +68,24 @@ function comprobarFinDeJuego(casilla) {
         return;
     }
 
+  // Comprobar si hay tablas
     if(comprobarTablas()) {
         let mensajes = document.getElementById('mensajes');
         mensajes.textContent = 'Tablas';
         finalizarJuego();
         return;
+    }
+}
+
+//Vamos a crear esta funcion para comprobar la victoria justo despues de poner una ficha nueva
+function casillaOnClick(event) {
+    let casilla = event.target;
+    console.log("click en casilla " + casilla.textContent);
+
+    if (comprobarCasillaValida(casilla)) {
+        casilla.textContent = FICHAS[turnoActual % 2];
+        turnoActual++;  // Incrementar turno antes de comprobar el fin del juego
+        comprobarFinDeJuego(casilla);  // Comprobar fin del juego después de actualizar la casilla
     }
 }
 
